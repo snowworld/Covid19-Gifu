@@ -15,6 +15,6 @@ Flask 1.1.2
 　
 ## LINEの公式アカウント
 アカウント名: 岐阜県コロナ感染データ  
-QRコード: ![qrcode](https://qr-official.line.me/sid/L/085qfkef.png)
+QRコード: https://qr-official.line.me/sid/L/085qfkef.png
 
 　
