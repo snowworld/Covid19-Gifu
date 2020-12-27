@@ -1,7 +1,6 @@
 # Dir
-
+__pycache__
 
 # File
 .python-version
 covid19-gifu.code-workspace
-credential.py
