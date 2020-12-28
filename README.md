@@ -14,7 +14,8 @@ Flask 1.1.2
 
 　
 ## LINEの公式アカウント
-アカウント名: 岐阜県コロナ感染データ  
-QRコード: https://qr-official.line.me/sid/L/085qfkef.png
+ID: @085qfkef  
+QRコード: https://qr-official.line.me/sid/L/085qfkef.png  
+<a href="https://lin.ee/YHciqAq"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a>
 
 　
