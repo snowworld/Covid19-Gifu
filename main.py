@@ -40,6 +40,8 @@ def main(request):
         if not isinstance(event.message, TextMessage):
             continue
 
+        userText = event.message.text
+
         dict = {"感染者数": "最新の感染者数は？",
                 "死亡者数": "最新の死亡者数は？",
                 "検査数": "最新の検査数は？",
@@ -47,13 +49,7 @@ def main(request):
                 "コロナ相談数": "最新のコロナ相談数は？"}
 
         # get statistic data
-        numbersJson = getNumberOf.getNumberOf()
-
-        if event.message.text == "最新の感染者数は？": stat = f"最新の感染者数は { numbersJson['infected'] } 件です。"
-        elif event.message.text == "最新の死亡者数は？": stat = f"最新の死亡者数は { numbersJson['dead'] } 件です。"
-        elif event.message.text == "最新の検査数は？": stat = f"最新の検査数は { numbersJson['inspected'] } 件です。"
-        elif event.message.text == "最新の健康相談件数は？": stat = f"最新の健康相談件数は { numbersJson['generalInquiry'] } 件です。"
-        elif event.message.text == "最新のコロナ相談数は？": stat = f"最新のコロナ相談件数は { numbersJson['covidInquiry'] } 件です。"
+        stat = getNumberOf.getNumberOf(userText)
 
         items = [QuickReplyButton(action=MessageAction(label=key, text=value)) for key, value in dict.items()]
 
