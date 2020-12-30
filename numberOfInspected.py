@@ -20,8 +20,11 @@ def numberOfInspected():
         records = data['result']['records']
 
         lastInspected = records[int(days) - 1]['検査件数']
+        if lastInspected is None:
+            lastInspected = records[int(days) - 2]['検査件数']            
 
         for index, item in enumerate(records):
-            totalInspected = totalInspected + item['検査件数']
+            if item['検査件数'] is not None:
+                totalInspected = totalInspected + item['検査件数']
    
     return {"lastInspected": lastInspected, "totalInspected": totalInspected}

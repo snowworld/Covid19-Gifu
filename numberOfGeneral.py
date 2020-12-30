@@ -20,8 +20,11 @@ def numberOfGeneral():
         records = data['result']['records']
 
         lastGeneralInquiry = records[int(days) - 1]['相談件数']
+        if lastGeneralInquiry is None:
+            lastGeneralInquiry = records[int(days) - 2]['相談件数']
 
         for index, item in enumerate(records):
-            totalGeneralInquiry = totalGeneralInquiry + item['相談件数']
+            if item['相談件数'] is not None:
+                totalGeneralInquiry = totalGeneralInquiry + item['相談件数']
          
     return {"lastGeneralInquiry": lastGeneralInquiry, "totalGeneralInquiry": totalGeneralInquiry}

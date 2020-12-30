@@ -20,8 +20,11 @@ def numberOfCovid():
         records = data['result']['records']
 
         lastCovidInquiry = records[int(days) - 1]['帰国者・接触者相談センター相談件数']
+        if lastCovidInquiry is None:
+            lastCovidInquiry = records[int(days) - 2]['帰国者・接触者相談センター相談件数']
 
         for index, item in enumerate(records):
-            totalCovidInquiry = totalCovidInquiry + item['帰国者・接触者相談センター相談件数']
+            if item['帰国者・接触者相談センター相談件数'] is not None:
+                totalCovidInquiry = totalCovidInquiry + item['帰国者・接触者相談センター相談件数']
 
     return {"lastCovidInquiry": lastCovidInquiry, "totalCovidInquiry": totalCovidInquiry}
