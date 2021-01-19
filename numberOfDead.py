@@ -2,6 +2,7 @@ import urllib.request
 import json
 
 def numberOfDead():
+    countFifty = 0
     countSixty = 0
     countSeventy = 0
     countEighty = 0
@@ -27,7 +28,8 @@ def numberOfDead():
         records = data['result']['records']
 
         for index, item in enumerate(records):
-            if item['年代'] == "60代": countSixty+=1
+            if item['年代'] == "50代": countFifty+=1
+            elif item['年代'] == "60代": countSixty+=1
             elif item['年代'] == "70代": countSeventy+=1
             elif item['年代'] == "80代": countEighty+=1
             elif item['年代'] == "80代": countEighty+=1
@@ -38,5 +40,6 @@ def numberOfDead():
             if item['性別'] == "男性": countMale+=1
             elif item['性別'] == "女性": countFemale+=1
 
-    return { "dead": dead, "countSixty": countSixty, "countSeventy": countSeventy, "countEighty": countEighty, "countNinety": countNinety, \
-        "countHundred": countHundred, "countOther": countOther, "countMale": countMale, "countFemale": countFemale }
+    return { "dead": dead, "countFifty": countFifty, "countSixty": countSixty, "countSeventy": countSeventy, "countEighty": countEighty, \
+            "countNinety": countNinety, "countHundred": countHundred, "countOther": countOther, \
+            "countMale": countMale, "countFemale": countFemale }

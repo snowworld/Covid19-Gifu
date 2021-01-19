@@ -10,23 +10,25 @@ def getNumberOf(userText):
     statCovid = numberOfCovid.numberOfCovid()
 
     if userText == "最新の陽性者数は？":
-        stat = f"最新の陽性者数累計は { statInfected['infected'] } 名です。\n\n\
+        stat = f"最新の陽性者数累計は { statInfected['infected'] } 名（+{ statInfected['countLatest'] }名）です。\n\n\
             [内訳]\n\
-            10代未満: { statInfected['countChild'] } 名\n\
-            10代: { statInfected['countTeen'] } 名\n\
-            20代: { statInfected['countTwenty'] } 名\n\
-            30代: { statInfected['countThirty'] } 名\n\
-            40代: { statInfected['countFourty'] } 名\n\
-            50代: { statInfected['countFifty'] } 名\n\
-            60代: { statInfected['countSixty'] } 名\n\
-            70代: { statInfected['countSeventy'] } 名\n\
-            80代: { statInfected['countEighty'] } 名\n\
-            90代: { statInfected['countNinety'] } 名\n\n\
-            男性: { statInfected['countMale'] } 名\n\
-            女性: { statInfected['countFemale'] } 名\n"
+            1歳未満: { statInfected['countBaby'] } 名（+{ statInfected['countBabyLatest'] }名）\n\
+            10歳未満: { statInfected['countChild'] } 名（+{ statInfected['countChildLatest'] }名）\n\
+            10代: { statInfected['countTeen'] } 名（+{ statInfected['countTeenLatest'] }名）\n\
+            20代: { statInfected['countTwenty'] } 名（+{ statInfected['countTwentyLatest'] }名）\n\
+            30代: { statInfected['countThirty'] } 名（+{ statInfected['countThirtyLatest'] }名）\n\
+            40代: { statInfected['countFourty'] } 名（+{ statInfected['countFourtyLatest'] }名）\n\
+            50代: { statInfected['countFifty'] } 名（+{ statInfected['countFiftyLatest'] }名）\n\
+            60代: { statInfected['countSixty'] } 名（+{ statInfected['countSixtyLatest'] }名）\n\
+            70代: { statInfected['countSeventy'] } 名（+{ statInfected['countSeventyLatest'] }名）\n\
+            80代: { statInfected['countEighty'] } 名（+{ statInfected['countEightyLatest'] }名）\n\
+            90代: { statInfected['countNinety'] } 名（+{ statInfected['countNinetyLatest'] }名）\n\n\
+            男性: { statInfected['countMale'] } 名（+{ statInfected['countMaleLatest'] }名）\n\
+            女性: { statInfected['countFemale'] } 名（+{ statInfected['countFemaleLatest'] }名）\n"
     elif userText == "最新の死亡者数は？":
         stat = f"最新の死亡者数累計は { statDead['dead'] } 名です。\n\n\
             [内訳]\n\
+            50代: { statDead['countFifty'] } 名\n\
             60代: { statDead['countSixty'] } 名\n\
             70代: { statDead['countSeventy'] } 名\n\
             80代: { statDead['countEighty'] } 名\n\
